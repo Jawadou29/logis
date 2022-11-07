@@ -1,0 +1,36 @@
+/* start main tiltle */
+.main-title{
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #001973;
+    position: relative;
+    margin: 0 auto 80px;
+    @media (max-width: 767px) {
+        font-size: 30px;
+    }
+    &::after{
+        content: attr(data-tilte);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        font-size: 60px;
+        color: rgba(#001973, 0.07);
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 3px;
+        width: 80px;
+        background-color: $main-color;
+        bottom: -15px;
+    }
+}
+/* end main tilte */

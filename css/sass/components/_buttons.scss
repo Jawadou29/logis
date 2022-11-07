@@ -1,0 +1,11 @@
+// start main button
+.main-btn{
+    background-color: $main-color;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    &:hover{
+        background-color: rgba($main-color, 0.8);
+    }
+}
+// end main button

@@ -1,0 +1,96 @@
+.footer{
+    background-color: $alt-color;
+    padding: 40px 0;
+    .container{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        @media (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        gap: 30px;
+        .info{
+            grid-column: span 2;
+            .logo{
+                color: white;
+                font-size: 25px;
+                color: white;
+                text-transform: capitalize;
+                font-weight: bold;
+                margin-bottom: 20px;
+                display: block;
+            }
+            p{
+                color: white;
+                line-height: 1.6;
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+            .social{
+                display: flex;
+                gap: 30px;
+                i{
+                    color: rgba(white, 0.6);
+                    cursor: pointer;
+                    padding: 10px;
+                    border: 1px solid rgba(white, 0.6);
+                    border-radius: 50%;
+                    &:hover{
+                        color: white;
+                        border: 1px solid white;
+                    }
+                }
+            }
+        }
+        .usefull-links,
+        .our-services{
+            h3{
+                color: white;
+                font-weight: 500;
+                text-transform: capitalize;
+                margin-bottom: 20px;
+            }
+            ul{
+                text-transform: capitalize;
+                li{
+                    color: rgba(white, 0.6);
+                    margin-bottom: 20px;
+                    cursor: pointer;
+                    &:hover{
+                        color: white;
+                    }
+                }
+            }
+        }
+        .contact{
+            @media (max-width: 992px) {
+                text-align: center;
+                grid-column: span 2;
+            }
+            h3{
+                color: white;
+                font-weight: 500;
+                text-transform: capitalize;
+                margin-bottom: 20px;
+            }
+            ul{
+                color: white;
+                margin-bottom: 30px;
+                li{
+                    margin-bottom: 15px;
+                }
+                span{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+.copyright{
+    background-color: $alt-color;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    div{
+        margin-bottom: 10px;
+    }
+}

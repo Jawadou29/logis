@@ -1,0 +1,163 @@
+/* start header */
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    transition: 0.5s;
+    &.header-scroll{
+        background-color: rgba($alt-color, 0.7);
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-transform: capitalize;
+        .logo{
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+        }
+        .overlay{
+            @media (max-width: 992px) {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(black, 0.5);
+                display: none;
+                z-index: 99;
+            }
+        }
+        .links{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            @media (max-width: 992px) {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: 400px;
+                height: 100vh;
+                overflow: auto;
+                background-color: rgba($alt-color, 1);
+                flex-direction: column;
+                align-items: baseline;
+                padding: 20px;
+                padding-top: 50px;
+                z-index: 100;
+                @include prefixer(transform, translateX(-100%));
+                @include prefixer(transition, 0.7s);
+                &.open{
+                    @include prefixer(transform, translateX(0%));
+                    @include prefixer(transition, 0.7s);
+                }
+            }
+            .fa-close{
+                display: none;
+                @media (max-width: 992px){
+                    display: block;
+                    color: white;
+                    position: absolute;
+                    right: 20px;
+                    top: 20px;
+                    font-size: 25px;
+                    cursor: pointer;
+                    &:hover{
+                        color: $main-color;
+                    }
+                }
+            }
+            & > ul {
+                display: flex;
+                @media (max-width: 992px) {
+                    flex-direction: column;
+                    width: 100%;
+                }
+                > li{
+                    position: relative;
+                    &:hover > ul{
+                        opacity: 1;
+                        top: 100%;
+                        z-index: 1;
+                        @include prefixer(transition, 0.5s);
+                    }
+                    > a{
+                        display: block;
+                        padding: 40px 15px;
+                        font-size: 17px;
+                        color: rgba(255, 255, 255, 0.6);
+                        transition: 0.5s;
+                        &.links-scroll{
+                            padding: 25px 15px;
+                        }
+                        &:hover{
+                            color: white;
+                        }
+                        @media (max-width: 992px) {
+                            padding: 25px 15px;
+                        }
+                    }
+                    ul{
+                        position: absolute;
+                        background-color: white;
+                        left: 0;
+                        top: calc(100% + 100px);
+                        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                        width: 200px;
+                        opacity: 0;
+                        z-index: -12;
+                        border-radius: 5px;
+                        @media (max-width: 992px) {
+                            position: sticky;
+                            opacity: 1;
+                            z-index: 2;
+                            background-color: transparent;
+                            box-shadow: none;
+                            border: 1px solid black;
+                            width: 100%;
+                            border: 1px solid $p-color;
+                            display: none;
+                            &.drop{
+                                display: block;
+                            }
+                        }
+                        a{
+                            color: black;
+                            display: block;
+                            padding: 10px 15px;
+                            font-size: 17px;
+                            &:hover{
+                                color: $main-color;
+                            }
+                            @media (max-width: 992px) {
+                                color: $p-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-btn{
+            @media (max-width: 992px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    .fa-bars{
+        display: none;
+        color: white;
+        font-size: 25px;
+        padding: 15px 0;
+        cursor: pointer;
+        @media (max-width: 992px) {
+            display: block;
+        }
+    }
+}
+/* end header */
